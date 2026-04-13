@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Gouden Vork — Restaurant Amsterdam</title>
+  <meta name="description" content="De Gouden Vork is een verfijnd restaurant in Amsterdam. Ontdek onze seizoensgebonden gerechten, prive dining en culinaire catering.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">De Gouden <span>Vork</span></a>
+    <nav class="nav" id="nav">
+      <a href="#diensten">Menu</a>
+      <a href="#over-ons">Over Ons</a>
+      <a href="#galerij">Galerij</a>
+      <a href="#faq">FAQ</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contact" class="nav-cta">Reserveren</a>
+    </nav>
+    <div class="nav-toggle" id="navToggle" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i data-lucide="utensils" style="width:14px;height:14px;"></i>
+        Fine Dining Amsterdam
+      </div>
+      <h1>Waar Smaken <em>Samenkomen</em></h1>
+      <p>Welkom bij De Gouden Vork, waar traditioneel vakmanschap en moderne culinaire creativiteit elkaar ontmoeten. Onze chef-koks werken uitsluitend met seizoensgebonden, lokale ingredienten. Reserveer vandaag en beleef een onvergetelijke avond.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">
+          <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+          Reserveer Nu
+        </a>
+        <a href="#diensten" class="btn-outline">
+          <i data-lucide="arrow-down" style="width:18px;height:18px;"></i>
+          Bekijk het Menu
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="ticker" style="background:var(--color-accent,#f5a623);padding:12px 0;overflow:hidden;">
+    <div style="display:flex;gap:48px;animation:tickerScroll 20s linear infinite;white-space:nowrap;">
+      <span><iconify-icon icon="lucide:utensils"></iconify-icon> Lunch</span><span><iconify-icon icon="lucide:moon"></iconify-icon> Diner</span><span><iconify-icon icon="lucide:users"></iconify-icon> Privé dining</span><span><iconify-icon icon="lucide:truck"></iconify-icon> Catering</span><span><iconify-icon icon="lucide:leaf"></iconify-icon> Seizoensmenu</span><span><iconify-icon icon="lucide:wine"></iconify-icon> Wijnadvies</span><span><iconify-icon icon="lucide:utensils"></iconify-icon> Lunch</span><span><iconify-icon icon="lucide:moon"></iconify-icon> Diner</span><span><iconify-icon icon="lucide:users"></iconify-icon> Privé dining</span><span><iconify-icon icon="lucide:truck"></iconify-icon> Catering</span><span><iconify-icon icon="lucide:leaf"></iconify-icon> Seizoensmenu</span><span><iconify-icon icon="lucide:wine"></iconify-icon> Wijnadvies</span>
+    </div>
+  </div>
+  <style>@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+  <style>.ticker span{display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:700;color:var(--color-bg,#0a0a0f);text-transform:uppercase;letter-spacing:0.05em;}</style>
+
+
+<!-- ============ SCROLL VIDEO (CANVAS) ============ -->
+<section class="scroll-video-section">
+  <div class="pin-wrap" id="scrollVideoPin">
+    <canvas id="scrollCanvas" width="1280" height="720"></canvas>
+    <div class="scroll-video-overlay">
+      <p><i data-lucide="mouse" style="width:16px;height:16px;display:inline;vertical-align:middle;margin-right:6px;"></i> Scroll om ons restaurant te ontdekken</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ======================== BEFORE / AFTER ======================== -->
+  <section class="ba-section" style="height:100vh;position:relative;overflow:hidden;background:#000;">
+    <div style="width:100%;height:100%;position:relative;">
+      <img src="images/craft.jpg" alt="Na" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+      <img src="images/hero.jpg" alt="Voor" id="baBefore" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;">
+      <div id="baLabel" style="position:absolute;z-index:3;bottom:10%;left:50%;transform:translateX(-50%);text-align:center;opacity:0;">
+        <span style="display:inline-block;background:var(--color-accent,#C1FF72);color:#0a0a0a;padding:8px 20px;border-radius:99px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Scroll om te zien</span>
+        <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.15;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,0.6);">Van oud naar <em style="color:var(--color-accent,#C1FF72);">nieuw</em></h2>
+      </div>
+    </div>
+  </section>
+<!-- ============ SERVICES ============ -->
+<section class="services section" id="diensten">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Ons <span class="accent">Aanbod</span></h2>
+      <p class="section-subtitle">Van een uitgebreide lunch tot een intiem prive diner — elke ervaring bij De Gouden Vork is een culinaire reis.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal stagger-1">
+        <div class="service-icon"><i data-lucide="utensils"></i></div>
+        <h3>Lunch</h3>
+        <p>Een verfijnde lunchervaring met seizoensgebonden gerechten, huisgebakken brood en verse soepen. Ideaal voor een zakelijke lunch of gezellig samenzijn op het midden van de dag.</p>
+      </div>
+      <div class="service-card reveal stagger-2">
+        <div class="service-icon"><i data-lucide="moon"></i></div>
+        <h3>Diner</h3>
+        <p>Ons avondmenu vertelt het verhaal van het seizoen. Drie tot zeven gangen met bijpassende wijnen, bereid door ons team van gepassioneerde koks. Elke avond een nieuw hoofdstuk.</p>
+      </div>
+      <div class="service-card reveal stagger-3">
+        <div class="service-icon"><i data-lucide="users"></i></div>
+        <h3>Prive Dining</h3>
+        <p>Een exclusieve eetervaring in onze besloten ruimte voor maximaal 18 gasten. Persoonlijk menu, eigen sommelier en een ambiance die volledig op uw wensen wordt afgestemd.</p>
+      </div>
+      <div class="service-card reveal stagger-4">
+        <div class="service-icon"><i data-lucide="truck"></i></div>
+        <h3>Catering</h3>
+        <p>De keuken van De Gouden Vork bij u thuis of op locatie. Van intimate feesten tot zakelijke evenementen, wij verzorgen hapjes, hoofdgerechten en desserts op het hoogste niveau.</p>
+      </div>
+      <div class="service-card reveal stagger-5">
+        <div class="service-icon"><i data-lucide="leaf"></i></div>
+        <h3>Seizoensmenu</h3>
+        <p>Elk kwartaal een geheel nieuw menu dat draait om de beste ingredienten van het moment. Onze chef haalt dagelijks verse producten van lokale boeren en ambachtelijke leveranciers.</p>
+      </div>
+      <div class="service-card reveal stagger-6">
+        <div class="service-icon"><i data-lucide="wine"></i></div>
+        <h3>Wijnadvies</h3>
+        <p>Onze sommelier selecteert wijnen die de smaken van elk gerecht versterken. Van klassieke Bourgognes tot verrassende natuurwijnen — laat u verrassen bij elk glas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal stagger-1">
+        <h3 id="stat1">0</h3>
+        <p>Tevreden Gasten</p>
+      </div>
+      <div class="stat-item reveal stagger-2">
+        <h3 id="stat2">0</h3>
+        <p>Jaar Ervaring</p>
+      </div>
+      <div class="stat-item reveal stagger-3">
+        <h3 id="stat3">0</h3>
+        <p>Gerechten per Seizoen</p>
+      </div>
+      <div class="stat-item reveal stagger-4">
+        <h3 id="stat4">0</h3>
+        <p>Google Reviews</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / TEAM ============ -->
+<section class="section" id="over-ons" style="background:var(--dark);">
+  <div class="container about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div class="reveal-left">
+      <img src="images/about.jpg" alt="Over De Gouden Vork — ons team in de keuken" style="border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,0.4);">
+    </div>
+    <div class="reveal-right">
+      <h2 class="section-title">Passie voor <span class="accent">Smaak</span></h2>
+      <p style="color:var(--text-muted);font-size:1rem;line-height:1.9;margin-bottom:20px;">Sinds 2011 is De Gouden Vork een culinair thuis voor liefhebbers in Amsterdam. Ons team van chef-koks combineert klassieke Franse technieken met een eigentijdse, Nederlandse twist. Elk gerecht wordt met precisie en liefde bereid.</p>
+      <p style="color:var(--text-muted);font-size:1rem;line-height:1.9;margin-bottom:28px;">Wij geloven dat goed eten begint bij goede ingredienten. Daarom werken wij samen met lokale boeren, vissers en kaasmakers die dezelfde passie voor kwaliteit delen als wij.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:8px;color:var(--gold);font-size:0.9rem;">
+          <i data-lucide="award" style="width:18px;height:18px;"></i> Michelin Aanbevolen
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;color:var(--gold);font-size:0.9rem;">
+          <i data-lucide="leaf" style="width:18px;height:18px;"></i> 100% Seizoensgebonden
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;color:var(--gold);font-size:0.9rem;">
+          <i data-lucide="grape" style="width:18px;height:18px;"></i> 200+ Wijnen in Huis
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials section" id="reviews">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Wat Onze <span class="accent">Gasten</span> Zeggen</h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Meer dan 3.000 gasten gingen u voor. Lees hun ervaringen.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal stagger-1">
+        <div class="testimonial-stars">
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+        </div>
+        <blockquote>"Het zeven-gangenmenu was een reis door de seizoenen. Elk bord was een kunstwerk, elke smaak was een verrassing. De sommelier koos wijnen die ik zelf nooit zou hebben geprobeerd. Uitzonderlijk."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PV</div>
+          <div>
+            <strong>Pieter Vermeer</strong><br>
+            <span>Vaste gast sinds 2019</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal stagger-2">
+        <div class="testimonial-stars">
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+        </div>
+        <blockquote>"Ons prive diner voor 12 gasten was onvergetelijk. Het team heeft alles tot in de puntjes verzorgd — van het persoonlijke menu tot de bloemdecoratie. Mijn moeder was diep ontroerd."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div>
+            <strong>Anna Kuipers</strong><br>
+            <span>Prive dining klant</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal stagger-3">
+        <div class="testimonial-stars">
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+          <i data-lucide="star" style="width:16px;height:16px;fill:var(--gold);"></i>
+        </div>
+        <blockquote>"De lunch bij De Gouden Vork is mijn wekelijkse ritueel geworden. De soep van de dag is altijd verrassend, de bediening is warm en persoonlijk. Het beste adres voor een zakelijke lunch in de stad."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JB</div>
+          <div>
+            <strong>Jeroen de Boer</strong><br>
+            <span>Wekelijkse lunchgast</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery section" id="galerij">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Ons <span class="accent">Restaurant</span> in Beeld</h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Een kijkje achter de schermen — waar vakmanschap en smaak samenkomen.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="images/hero.jpg" alt="Interieur De Gouden Vork" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/craft.jpg" alt="Chef aan het werk" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/project1.jpg" alt="Signature gerecht" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/project2.jpg" alt="Dessert presentatie" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/kitchen.jpg" alt="Open keuken" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/detail.jpg" alt="Tafel detail" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/about.jpg" alt="Ons team" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/team.jpg" alt="Keukenteam" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/carousel.jpg" alt="Sfeervolle avond" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/cta-bg.jpg" alt="Wijnkelder" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <h2 class="section-title">Veelgestelde <span class="accent">Vragen</span></h2>
+      <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Alles wat u wilt weten over dineren bij De Gouden Vork.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Moet ik vooraf reserveren?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Wij raden reserveren sterk aan, vooral voor diner en weekenden. U kunt online reserveren via onze website of telefonisch bellen. Voor lunch op doordeweekse dagen zijn er vaak nog plekken beschikbaar zonder reservering.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Zijn er opties voor dieetwensen en allergieen?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Absoluut. Onze keuken werkt met plezier aan vegetarische, veganistische en glutenvrije varianten van ons menu. Geef uw dieetwensen door bij het reserveren, dan stemmen wij het menu hierop af.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Hoe werkt de prive dining ervaring?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Onze prive ruimte biedt plaats aan 6 tot 18 gasten. U kiest samen met onze chef een op maat gemaakt menu. Wij regelen de volledige avond inclusief wijnbegeleiding, bediening en eventuele decoratie. Neem contact op voor beschikbaarheid.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Wat kost een gemiddeld diner?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Ons driegangenmenu begint vanaf 65 euro per persoon. Het seizoensmenu van vijf gangen is 89 euro, en het volledige zevengangenmenu met wijnbegeleiding is 135 euro. Lunch is beschikbaar vanaf 28 euro per persoon.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question">
+          <h3>Is er parkeergelegenheid in de buurt?</h3>
+          <i data-lucide="plus" class="faq-icon" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Op loopafstand vindt u parkeergarage Centrum. Wij adviseren om met het openbaar vervoer te komen — tramhalte Keizersgracht is op 50 meter. Op de fiets? Er is voldoende stallingsplek direct voor de deur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="reveal">
+      <h2>Klaar voor een <span class="accent">Bijzondere Avond</span>?</h2>
+      <p>Reserveer vandaag nog uw tafel en laat u verrassen door de smaken van het seizoen. Eerste keer? Onze chef verwelkomt u graag persoonlijk.</p>
+      <a href="#" class="btn-primary" style="margin:0 auto;">
+        <i data-lucide="calendar" style="width:18px;height:18px;"></i>
+        Reserveer Uw Tafel
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">De Gouden <span>Vork</span></a>
+        <p>Sinds 2011 het adres voor seizoensgebonden fine dining in Amsterdam. Waar traditie en creativiteit samenkomen op uw bord.</p>
+        <div style="display:flex;gap:12px;margin-top:20px;">
+          <a href="#" style="width:36px;height:36px;background:rgba(201,168,76,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+          <a href="#" style="width:36px;height:36px;background:rgba(201,168,76,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);"><i data-lucide="facebook" style="width:16px;height:16px;"></i></a>
+          <a href="#" style="width:36px;height:36px;background:rgba(201,168,76,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);"><i data-lucide="phone" style="width:16px;height:16px;"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#diensten">Lunch</a></li>
+          <li><a href="#diensten">Diner</a></li>
+          <li><a href="#diensten">Prive Dining</a></li>
+          <li><a href="#diensten">Catering</a></li>
+          <li><a href="#diensten">Wijnadvies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informatie</h4>
+        <ul>
+          <li><a href="#over-ons">Over Ons</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#faq">Veelgestelde Vragen</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#"><i data-lucide="map-pin" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>Keizersgracht 256, Amsterdam</a></li>
+          <li><a href="tel:0206123456"><i data-lucide="phone" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>020-612 3456</a></li>
+          <li><a href="mailto:info@degoudenvork.nl"><i data-lucide="mail" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>info@degoudenvork.nl</a></li>
+          <li><a href="#"><i data-lucide="clock" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:6px;"></i>Di-Za: 12:00 - 23:00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 De Gouden Vork. Alle rechten voorbehouden.</p>
+      <p>Website door <a href="https://www.studiolee.nl" target="_blank" rel="noopener">StudioLee</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STUDIOLEE BADGE ============ -->
+<a href="https://www.studiolee.nl/restaurants" class="studiolee-badge" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  Website door StudioLee
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('nav');
+  navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  // Scroll Reveal
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => el.classList.add('active'),
+    });
+  });
+
+  // Scroll Video Canvas
+  const canvas = document.getElementById('scrollCanvas');
+  const ctx = canvas.getContext('2d');
+  const fallbackImg = new Image();
+  fallbackImg.src = 'images/craft.jpg';
+  fallbackImg.onload = () => {
+    const hRatio = canvas.width / fallbackImg.width;
+    const vRatio = canvas.height / fallbackImg.height;
+    const ratio = Math.max(hRatio, vRatio);
+    const cx = (canvas.width - fallbackImg.width * ratio) / 2;
+    const cy = (canvas.height - fallbackImg.height * ratio) / 2;
+    ctx.drawImage(fallbackImg, 0, 0, fallbackImg.width, fallbackImg.height, cx, cy, fallbackImg.width * ratio, fallbackImg.height * ratio);
+  };
+
+  // Counter animations
+  function animateCounter(id, target, suffix) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => {
+        gsap.to({ val: 0 }, {
+          val: target,
+          duration: 2,
+          ease: 'power2.out',
+          onUpdate: function() {
+            el.textContent = Math.round(this.targets()[0].val).toLocaleString('nl-NL') + suffix;
+          }
+        });
+      },
+      once: true
+    });
+  }
+  animateCounter('stat1', 3200, '+');
+  animateCounter('stat2', 15, '');
+  animateCounter('stat3', 45, '+');
+  animateCounter('stat4', 4.9, '');
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    });
+  });
+
+  // Gallery hover GSAP
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      gsap.to(item, { scale: 1.03, duration: 0.3, ease: 'power2.out' });
+    });
+    item.addEventListener('mouseleave', () => {
+      gsap.to(item, { scale: 1, duration: 0.3, ease: 'power2.out' });
+    });
+  });
+
+  // Service cards GSAP hover
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card.querySelector('.service-icon'), { rotate: 10, scale: 1.15, duration: 0.3 });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card.querySelector('.service-icon'), { rotate: 0, scale: 1, duration: 0.3 });
+    });
+  });
+
+  // Parallax hero
+  gsap.to('.hero-bg', {
+    yPercent: 30,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    }
+  });
+
+  // Testimonial stagger entrance
+  gsap.from('.testimonial-card', {
+    y: 60,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 0.8,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.testimonials-grid',
+      start: 'top 80%',
+    }
+  });
+
+  // Stats glow pulse
+  gsap.to('.stat-item h3', {
+    textShadow: '0 0 20px rgba(201,168,76,0.5)',
+    repeat: -1,
+    yoyo: true,
+    duration: 2,
+    ease: 'sine.inOut'
+  });
+});
+</script>
+
+
+    // Before/After slider
+    (function() {
+      var before = document.getElementById('baBefore');
+      var label = document.getElementById('baLabel');
+      if (!before || typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+      var tl = gsap.timeline({
+        scrollTrigger: { trigger: '.ba-section', start: 'top top', end: '+=200%', pin: true, scrub: 0.5, anticipatePin: 1 }
+      });
+      tl.fromTo(before, { clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 100% 0 0)', duration: 1, ease: 'none' });
+      tl.fromTo(label, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, 0.5);
+    })();
+
+</body>
+</html>
